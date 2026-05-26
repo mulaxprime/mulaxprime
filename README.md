@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Google+Sans&weight=600&size=30&duration=4000&pause=1000&color=00BFFF&center=true&vCenter=true&width=500&lines=Hi+👋+I'm+Mulax+Prime;AI+Developer+from+Botswana+🇧🇼;I+build+real+tools+that+solve+real+problems" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Google+Sans&weight=600&size=30&duration=4000&pause=1000&color=00BFFF&center=true&vCenter=true&width=500&lines=Hi+👋+I'm+Mulax+Prime;AI+Developer+from+Botswana+🇧🇼;I+build+real+tools+that+solve+real+problems" alt="Typing SVG" />
   </a>
 </p>
 
@@ -18,13 +18,11 @@
   <h2>🚀 About Me</h2>
 </div>
 
-- 👤 Real name: **Amantle Mpaekae** | Alias: **Mulax Prime** — *Alien Mulax Prime*
-- 🎂 Age: **19**
-- 📍 Self-taught developer from **Gaborone, Botswana** 🇧🇼
-- 🐍 I build AI-powered tools using **Python**
-- 🎓 Creator of **Mothusi** — a voice AI assistant for BGCSE Computer Studies students
-- 🔨 I learn by building real things, not just tutorials
-- 🚧 Currently working on **Mothusi V3**
+- Self-taught developer from **Gaborone, Botswana**
+- I build AI-powered tools using **Python**
+- Creator of **Mothusi** — a voice AI assistant for BGCSE Computer Studies students
+- I learn by building real things, not just tutorials
+- Currently working on **Mothusi V3**
 
 ---
 
@@ -115,7 +113,7 @@
 
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Google+Sans&weight=600&size=24&pause=1000&color=00BFFF&center=true&vCenter=true&width=500&lines=Thanks+for+visiting!+👋;Building+from+Botswana+🇧🇼;One+tool+at+a+time+🚀" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Google+Sans&weight=600&size=24&pause=1000&color=00BFFF&center=true&vCenter=true&width=500&lines=Thanks+for+visiting!+👋;Building+from+Botswana+🇧🇼;One+tool+at+a+time+🚀" alt="Typing SVG" />
   </a>
 </div>
 
