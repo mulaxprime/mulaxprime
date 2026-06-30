@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mulax Prime — AI Developer, Botswana</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f0f4f9;
+    --bg3: #e8eef6;
+    --accent: #1a73e8;
+    --accent-dark: #0d47a1;
+    --text: #14213d;
+    --muted: #5f6b7a;
+    --border: rgba(13,71,161,0.12);
+    --card: #f7f9fc;
+    --glow: 0 12px 40px rgba(26,115,232,0.14);
+    --radius: 16px;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+
+  nav {
+    position:fixed;top:0;left:0;right:0;z-index:1000;
+    padding:20px 60px;
+    display:flex;align-items:center;justify-content:space-between;
+    backdrop-filter:blur(20px) saturate(1.5);
+    background:rgba(255,255,255,0.85);
+    border-bottom:1px solid var(--border);
+    transition:padding 0.3s ease;
+  }
+  nav.scrolled { padding: 14px 60px; box-shadow: 0 4px 20px rgba(13,71,161,0.05); }
+  .nav-logo { font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-0.02em; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display:flex;gap:36px;list-style:none; }
+  .nav-links a { color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.02em;text-transform:uppercase;transition:color 0.2s;position:relative; }
+  .nav-links a::after { content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--accent);transition:width 0.25s ease; }
+  .nav-links a:hover { color: var(--accent-dark); }
+  .nav-links a:hover::after { width: 100%; }
+  .btn { display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:100px;font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;transition:all 0.22s ease;border:none;text-decoration:none; }
+  .btn-outline { background:transparent;border:1.5px solid var(--border);color:var(--text); }
+  .btn-outline:hover { border-color:var(--accent);color:var(--accent); }
+  .btn-accent { background:var(--accent);color:#ffffff;font-weight:700; }
+  .btn-accent:hover { background:var(--accent-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(26,115,232,0.3); }
+
+  #hero { min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 60px 80px;position:relative;overflow:hidden;background:linear-gradient(180deg,#ffffff 0%,#f4f8fd 100%); }
+  .hero-grid-bg { position:absolute;inset:0;background-image:linear-gradient(rgba(26,115,232,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(26,115,232,0.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 70% at 30% 40%,black,transparent); }
+  .hero-glow { position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(26,115,232,0.08) 0%,transparent 70%);top:30%;right:-10%;pointer-events:none; }
+  .hero-tag { display:inline-flex;align-items:center;gap:8px;background:rgba(26,115,232,0.08);border:1px solid rgba(26,115,232,0.25);color:var(--accent-dark);padding:7px 18px;border-radius:100px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;width:fit-content;margin-bottom:28px;animation:fadeSlideUp 0.6s ease both; }
+  .hero-tag::before { content:'🇧🇼';font-size:0.9rem; }
+  .hero-title { font-family:var(--font-display);font-size:clamp(2.8rem,6.5vw,6rem);font-weight:700;line-height:1.05;letter-spacing:-0.03em;margin-bottom:28px;max-width:920px;animation:fadeSlideUp 0.7s 0.1s ease both;color:var(--text); }
+  .hero-title .line2 { color:var(--accent);display:block; }
+  .hero-title .line3 { color:var(--muted);display:block;font-weight:400;font-style:italic;font-size:0.5em;margin-top:8px; }
+  .hero-sub { max-width:560px;color:var(--muted);font-size:1.08rem;line-height:1.75;margin-bottom:44px;animation:fadeSlideUp 0.7s 0.2s ease both; }
+  .hero-actions { display:flex;gap:14px;flex-wrap:wrap;animation:fadeSlideUp 0.7s 0.3s ease both; }
+  .btn-lg { padding: 15px 34px; font-size: 0.95rem; }
+  .hero-stats { position:absolute;right:60px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:32px;animation:fadeSlideUp 0.8s 0.4s ease both; }
+  .stat-item { text-align: right; }
+  .stat-num { font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--text);line-height:1;display:block; }
+  .stat-label { font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted); }
+  .stat-accent { color: var(--accent); }
+  .scroll-hint { position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:0.7rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--muted);animation:fadeSlideUp 1s 0.8s ease both; }
+  .scroll-line { width:1px;height:48px;background:linear-gradient(to bottom,var(--accent),transparent);animation:scrollLine 2s infinite; }
+  @keyframes scrollLine { 0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom} }
+
+  #about { padding:120px 60px;display:grid;grid-template-columns:1fr 1.2fr;gap:90px;align-items:center;position:relative; }
+  .about-img-wrap { position: relative; }
+  .about-img-frame { width:100%;aspect-ratio:4/5;background:var(--bg2);border-radius:24px;border:1px solid var(--border);overflow:hidden;position:relative; }
+  .about-img-placeholder { width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--muted);font-size:0.85rem; }
+  .about-img-placeholder svg { width:48px;height:48px;opacity:0.3; }
+  .about-img-frame::before { content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,115,232,0.06),transparent 60%);pointer-events:none; }
+  .about-corner { position:absolute;bottom:-22px;right:-22px;width:150px;padding:20px;background:var(--accent);border-radius:16px;color:#ffffff;box-shadow:0 16px 40px rgba(26,115,232,0.35); }
+  .about-corner .num { font-family:var(--font-display);font-size:2.3rem;font-weight:700;line-height:1;display:block; }
+  .about-corner .lbl { font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em; }
+  .section-tag { font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent);font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:10px; }
+  .section-tag::before { content:'';flex-shrink:0;width:28px;height:2px;background:var(--accent); }
+  .section-title { font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:22px;color:var(--text); }
+  .about-bio { color:var(--muted);line-height:1.85;margin-bottom:36px; }
+  .about-bio p { margin-bottom: 16px; }
+  .about-bio strong { color: var(--text); }
+  .skills-list { display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px; }
+  .skill-tag { padding:7px 16px;background:var(--card);border:1px solid var(--border);border-radius:100px;font-size:0.8rem;color:var(--text);transition:all 0.2s;font-weight:500; }
+  .skill-tag:hover { border-color:var(--accent);color:var(--accent);background:rgba(26,115,232,0.06); }
+
+  #journey { padding:100px 60px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+  .journey-grid { display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px; }
+  .journey-card { background:#ffffff;border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;position:relative;transition:all 0.3s ease; }
+  .journey-card:hover { transform:translateY(-4px);box-shadow:var(--glow);border-color:rgba(26,115,232,0.3); }
+  .journey-version { font-family:var(--font-display);font-size:1.7rem;font-weight:700;color:var(--accent);margin-bottom:6px; }
+  .journey-date { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:14px; }
+  .journey-desc { font-size:0.88rem;color:var(--muted);line-height:1.6; }
+
+  #services { padding:120px 60px; }
+  .section-header { display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:20px; }
+  .services-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:20px; }
+  .service-card { background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:36px;position:relative;overflow:hidden;transition:all 0.3s ease;cursor:default; }
+  .service-card:hover { border-color:rgba(26,115,232,0.3);transform:translateY(-4px);box-shadow:var(--glow); }
+  .service-icon { width:52px;height:52px;background:rgba(26,115,232,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;font-size:1.5rem; }
+  .service-num { position:absolute;top:28px;right:28px;font-family:var(--font-display);font-size:3.5rem;font-weight:700;color:rgba(13,71,161,0.05);line-height:1; }
+  .service-name { font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:12px;color:var(--text); }
+  .service-desc { color:var(--muted);font-size:0.9rem;line-height:1.7; }
+
+  #portfolio { padding: 120px 60px;background:var(--bg2); }
+  .portfolio-grid { display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto;gap:20px; }
+  .project-card { background:#ffffff;border:1px solid var(--border);border-radius:20px;overflow:hidden;position:relative;transition:all 0.4s ease; }
+  .project-card:hover { transform:translateY(-6px);border-color:rgba(26,115,232,0.3);box-shadow:var(--glow); }
+  .project-card.featured { grid-column: span 12; display:grid; grid-template-columns: 1fr 1fr; }
+  .project-card.small { grid-column: span 6; }
+  .project-thumb { aspect-ratio:16/9;background:linear-gradient(135deg,var(--accent-dark),var(--accent));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden; }
+  .featured .project-thumb { aspect-ratio:auto;height:100%; }
+  .project-thumb-text { color:rgba(255,255,255,0.95);font-family:var(--font-display);font-size:2.2rem;font-weight:700;text-align:center;padding:30px; }
+  .project-overlay { position:absolute;inset:0;background:rgba(13,71,161,0.85);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s; }
+  .project-card:hover .project-overlay { opacity: 1; }
+  .view-btn { padding:10px 24px;background:#ffffff;color:var(--accent-dark);border-radius:100px;font-weight:700;font-size:0.82rem;text-decoration:none;transform:translateY(8px);transition:transform 0.3s;display:inline-block; }
+  .project-card:hover .view-btn { transform: translateY(0); }
+  .project-info { padding: 28px 30px; display:flex; flex-direction:column; justify-content:center; }
+  .project-cats { display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap; }
+  .project-cat { padding:4px 12px;background:rgba(26,115,232,0.08);border:1px solid rgba(26,115,232,0.2);border-radius:100px;font-size:0.7rem;color:var(--accent-dark);text-transform:uppercase;letter-spacing:0.05em;font-weight:600; }
+  .project-name { font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:10px;color:var(--text); }
+  .small .project-name { font-size: 1.1rem; }
+  .project-brief { color:var(--muted);font-size:0.92rem;line-height:1.65; }
+
+  #experience { padding:120px 60px; }
+  .timeline { position:relative;padding-left:40px;max-width:800px; }
+  .timeline::before { content:'';position:absolute;left:0;top:8px;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),transparent); }
+  .timeline-item { position:relative;margin-bottom:52px;padding-left:32px;opacity:0;transform:translateX(-20px);transition:all 0.5s ease; }
+  .timeline-item.visible { opacity:1;transform:translateX(0); }
+  .timeline-dot { position:absolute;left:-44px;top:6px;width:10px;height:10px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px rgba(26,115,232,0.15); }
+  .timeline-period { font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:700;margin-bottom:8px; }
+  .timeline-role { font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:4px;color:var(--text); }
+  .timeline-company { color:var(--muted);font-size:0.9rem;margin-bottom:12px; }
+  .timeline-desc { color:var(--muted);font-size:0.9rem;line-height:1.7; }
+
+  #roadmap { padding:100px 60px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border); }
+  .roadmap-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:50px; }
+  .roadmap-card { background:#ffffff;border:1px solid var(--border);border-radius:14px;padding:24px 18px;text-align:center;transition:all 0.3s; }
+  .roadmap-card:hover { border-color:rgba(26,115,232,0.3);transform:translateY(-3px); }
+  .roadmap-month { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px; }
+  .roadmap-title { font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--accent-dark);margin-bottom:8px; }
+  .roadmap-desc { font-size:0.78rem;color:var(--muted);line-height:1.5; }
+  .roadmap-card.final { background:var(--accent); }
+  .roadmap-card.final .roadmap-month,.roadmap-card.final .roadmap-title,.roadmap-card.final .roadmap-desc { color:#ffffff; }
+
+  #contact { padding:120px 60px; }
+  .contact-wrap { display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start; }
+  .contact-info-list { margin-top:36px;display:flex;flex-direction:column;gap:16px; }
+  .contact-info-item { display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--card);border:1px solid var(--border);border-radius:12px;transition:all 0.2s; }
+  .contact-info-item:hover { border-color: rgba(26,115,232,0.3); }
+  .ci-icon { width:40px;height:40px;flex-shrink:0;background:rgba(26,115,232,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem; }
+  .ci-label { font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted); }
+  .ci-val { font-weight:600;font-size:0.92rem;color:var(--text); }
+  .contact-note { background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding: 28px; }
+  .contact-note p { color:var(--muted); line-height:1.8; margin-bottom: 12px; }
+  .contact-note p:last-child { margin-bottom: 0; }
+
+  footer { padding:48px 60px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px; }
+  .footer-logo { font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text);text-decoration:none; }
+  .footer-logo span { color: var(--accent); }
+  .footer-copy { color:var(--muted);font-size:0.82rem; }
+  .social-links { display:flex;gap:12px; }
+  .social-link { width:38px;height:38px;background:var(--card);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);font-size:0.8rem;transition:all 0.2s;font-weight:600; }
+  .social-link:hover { border-color:var(--accent);color:var(--accent);transform:translateY(-2px); }
+
+  @keyframes fadeSlideUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
+  .reveal { opacity:0;transform:translateY(30px);transition:all 0.6s ease; }
+  .reveal.visible { opacity:1;transform:translateY(0); }
+
+  .hamburger { display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none; }
+  .hamburger span { display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:all 0.3s; }
+
+  @media (max-width:1100px) { .hero-stats{display:none}.services-grid{grid-template-columns:repeat(2,1fr)}.journey-grid{grid-template-columns:repeat(2,1fr)}.roadmap-grid{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:900px) {
+    nav{padding:18px 30px}nav.scrolled{padding:12px 30px}.nav-links{display:none}.hamburger{display:flex}
+    #hero{padding:100px 30px 60px}#about{grid-template-columns:1fr;padding:80px 30px;gap:48px}
+    #services,#portfolio,#experience,#contact,#journey,#roadmap{padding:80px 30px}
+    .portfolio-grid{grid-template-columns:1fr}.project-card.featured{grid-template-columns:1fr}.project-card.small{grid-column:span 1}
+    .contact-wrap{grid-template-columns:1fr}.services-grid{grid-template-columns:1fr}.journey-grid{grid-template-columns:1fr 1fr}.roadmap-grid{grid-template-columns:1fr 1fr}
+    footer{flex-direction:column;gap:20px;text-align:center;padding:40px 30px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Mulax<span>.</span>Prime</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Skills</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#experience">Journey</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="https://github.com/mulaxprime" target="_blank" class="btn btn-outline">GitHub</a>
+    <a href="#contact" class="btn btn-accent">Get In Touch</a>
+  </div>
+  <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-tag">Building from Mogoditshane, Botswana</div>
+  <h1 class="hero-title">
+    Amantle Mpaekae
+    <span class="line2">AI &amp; Python Developer</span>
+    <span class="line3">Self-taught. Building real tools, not tutorials.</span>
+  </h1>
+  <p class="hero-sub">
+    I'm a 19-year-old self-taught developer building Mothusi — an AI voice and chat study assistant helping BGCSE Computer Studies students in Botswana learn and test themselves, for free.
+  </p>
+  <div class="hero-actions">
+    <a href="#portfolio" class="btn btn-accent btn-lg">See Mothusi ↓</a>
+    <a href="https://github.com/mulaxprime" target="_blank" class="btn btn-outline btn-lg">View GitHub</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <span class="stat-num stat-accent">3</span>
+      <span class="stat-label">Versions Shipped</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num stat-accent">2</span>
+      <span class="stat-label">Schools Demoed</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num stat-accent">2026</span>
+      <span class="stat-label">Building Since</span>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap reveal">
+    <div class="about-img-frame">
+      <div class="about-img-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        Photo coming soon
+      </div>
+    </div>
+    <div class="about-corner">
+      <span class="num">19</span>
+      <span class="lbl">Years Old</span>
+    </div>
+  </div>
+  <div class="about-content reveal">
+    <div class="section-tag">About Me</div>
+    <h2 class="section-title">Why I Build<br>What I Build</h2>
+    <div class="about-bio">
+      <p>My name is Amantle Mpaekae, also known as Mulax Prime. I'm a self-taught developer from Mogoditshane, Botswana, working toward becoming an AI Engineer.</p>
+      <p>I scored a D in Computer Studies for BGCSE. That same subject is what I now build software for. <strong>Mothusi</strong> exists because I know what it feels like to be stuck on a topic with no one to explain it simply — so I built the explainer I needed.</p>
+      <p>I learn by shipping, not by studying theory first. Every version of Mothusi taught me something no course could — debugging real crashes, fixing real architecture problems, demoing to real teachers and getting real feedback.</p>
+    </div>
+    <div class="skills-list">
+      <span class="skill-tag">Python</span>
+      <span class="skill-tag">tkinter</span>
+      <span class="skill-tag">Groq AI</span>
+      <span class="skill-tag">edge-tts</span>
+      <span class="skill-tag">SpeechRecognition</span>
+      <span class="skill-tag">PyInstaller</span>
+      <span class="skill-tag">HTML &amp; CSS</span>
+      <span class="skill-tag">Git &amp; GitHub</span>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="#contact" class="btn btn-accent">Get In Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Build History</div>
+      <h2 class="section-title">Mothusi's<br>Journey So Far</h2>
+    </div>
+  </div>
+  <div class="journey-grid">
+    <div class="journey-card reveal">
+      <div class="journey-version">V1</div>
+      <div class="journey-date">April 2026</div>
+      <p class="journey-desc">Terminal app, voice only. Demoed at Mogoditshane Senior Secondary — failed first due to a missing API key, fixed same day. First GitHub release.</p>
+    </div>
+    <div class="journey-card reveal">
+      <div class="journey-version">V2</div>
+      <div class="journey-date">May 2026</div>
+      <p class="journey-desc">Full GUI, animated orb, student registration, 7-question quiz with scoring. Demoed to a senior teacher who gave real feedback.</p>
+    </div>
+    <div class="journey-card reveal">
+      <div class="journey-version">V3</div>
+      <div class="journey-date">June 2026</div>
+      <p class="journey-desc">Rebuilt from scratch. Google AI-style interface, login state machine, typing and voice input, natural AriaNeural voice.</p>
+    </div>
+    <div class="journey-card reveal">
+      <div class="journey-version">V3.1</div>
+      <div class="journey-date">June 2026</div>
+      <p class="journey-desc">5 bugs fixed, quiz save logic rewired, syllabus updated with 2024 BGCSE examiner report weak topics. Current version.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS / SERVICES -->
+<section id="services">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">What I Build With</div>
+      <h2 class="section-title">Core<br>Skills</h2>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🐍</div>
+      <div class="service-num">01</div>
+      <h3 class="service-name">Python Applications</h3>
+      <p class="service-desc">Desktop applications with tkinter, state machines, threading, and clean modular architecture. Built and shipped, not just learned.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🧠</div>
+      <div class="service-num">02</div>
+      <h3 class="service-name">AI Integration</h3>
+      <p class="service-desc">Connecting applications to Groq AI for fast, context-aware responses. Prompt design, syllabus-scoped systems, conversation handling.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">🎙️</div>
+      <div class="service-num">03</div>
+      <h3 class="service-name">Voice Interfaces</h3>
+      <p class="service-desc">Speech recognition for input and natural text-to-speech for output, built into real applications students actually use.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Featured Project</div>
+      <h2 class="section-title">Mothusi</h2>
+    </div>
+  </div>
+  <div class="portfolio-grid" id="projectGrid">
+    <div class="project-card featured reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-text">Mothusi V3.1</div>
+        <div class="project-overlay"><a href="https://github.com/mulaxprime/Mothusi" class="view-btn" target="_blank">View on GitHub →</a></div>
+      </div>
+      <div class="project-info">
+        <div class="project-cats"><span class="project-cat">AI Voice Assistant</span><span class="project-cat">Python</span></div>
+        <h3 class="project-name">Mothusi — BGCSE Study Assistant</h3>
+        <p class="project-brief">An AI voice and chat study assistant for BGCSE Computer Studies students in Botswana. Students type or speak a question and get an answer in under 2 seconds, read aloud in a natural voice. Includes a full quiz mode — 7 questions, 10 marks, two attempts per question, and automatic score saving. Built with Python, tkinter, Groq AI, edge-tts and SpeechRecognition. Demoed live at two secondary schools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start" class="exp-grid">
+    <div class="reveal">
+      <div class="section-tag">Education</div>
+      <h2 class="section-title">School<br>Background</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2021 — 2023</div>
+          <h3 class="timeline-role">Student</h3>
+          <div class="timeline-company">Gabane Junior Secondary School</div>
+          <p class="timeline-desc">Discovered an interest in technology and problem solving — started exploring how computers actually work.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2024 — 2025</div>
+          <h3 class="timeline-role">Student</h3>
+          <div class="timeline-company">Gaborone Senior Secondary School</div>
+          <p class="timeline-desc">Completed BGCSE. Started self-teaching Python during school and began building real projects while still a student.</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-tag">Development</div>
+      <h2 class="section-title">Building<br>Mothusi</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2026 — Present</div>
+          <h3 class="timeline-role">Independent Developer</h3>
+          <div class="timeline-company">Mulax Prime</div>
+          <p class="timeline-desc">Building Mothusi solo. Working toward AI Engineering through real projects rather than courses — learning by shipping and fixing bugs in production.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">June 2026</div>
+          <h3 class="timeline-role">Mothusi V3.1 — Demo Ready</h3>
+          <div class="timeline-company">Mulax Prime</div>
+          <p class="timeline-desc">Fixed five production bugs, rewired the quiz save logic, updated the syllabus with 2024 examiner report weak topics, and demoed to a Computer Studies teacher.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">What's Next</div>
+      <h2 class="section-title">Roadmap to<br>mothusi.study</h2>
+    </div>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card reveal">
+      <div class="roadmap-month">July 2026</div>
+      <div class="roadmap-title">CSS</div>
+      <div class="roadmap-desc">Build the Mothusi web landing page.</div>
+    </div>
+    <div class="roadmap-card reveal">
+      <div class="roadmap-month">Aug 2026</div>
+      <div class="roadmap-title">JS + Fetch</div>
+      <div class="roadmap-desc">Connect frontend to backend APIs.</div>
+    </div>
+    <div class="roadmap-card reveal">
+      <div class="roadmap-month">Sep 2026</div>
+      <div class="roadmap-title">Flask + Groq</div>
+      <div class="roadmap-desc">Mothusi runs in a browser, not just Windows.</div>
+    </div>
+    <div class="roadmap-card reveal">
+      <div class="roadmap-month">Nov 2026</div>
+      <div class="roadmap-title">Supabase</div>
+      <div class="roadmap-desc">Move student data to a secure cloud database.</div>
+    </div>
+    <div class="roadmap-card final reveal">
+      <div class="roadmap-month">Dec 2026</div>
+      <div class="roadmap-title">Launch</div>
+      <div class="roadmap-desc">Deploy mothusi.study for every BGCSE student.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Let's<br>Connect</h2>
+    </div>
+  </div>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <p style="color:var(--muted);line-height:1.8;margin-bottom:10px;">
+        Interested in Mothusi, want to collaborate, or just want to connect with another Botswana developer? Reach out.
+      </p>
+      <div class="contact-info-list">
+        <div class="contact-info-item">
+          <div class="ci-icon">📧</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-val"><a href="mailto:amantlempaekae@gmail.com" style="color:var(--text);text-decoration:none;">amantlempaekae@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Location</div>
+            <div class="ci-val">Mogoditshane, Botswana</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon">💻</div>
+          <div>
+            <div class="ci-label">GitHub</div>
+            <div class="ci-val"><a href="https://github.com/mulaxprime" target="_blank" style="color:var(--text);text-decoration:none;">github.com/mulaxprime</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal contact-note">
+      <p><strong style="color:var(--text)">Currently focused on Mothusi.</strong></p>
+      <p>I'm not taking freelance bot or web development work right now — all my time goes into building Mothusi and learning the next stage of the roadmap above.</p>
+      <p>If you want to follow the project, check the GitHub repo or reach out by email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#hero" class="footer-logo">Mulax<span>.</span>Prime</a>
+  <p class="footer-copy">© 2026 Amantle Mpaekae · Built in Botswana</p>
+  <div class="social-links">
+    <a class="social-link" href="https://github.com/mulaxprime" target="_blank" title="GitHub">GH</a>
+  </div>
+</footer>
+
+<script>
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>60);});
+
+const revealObs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);revealObs.unobserve(e.target);}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+const tlObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');tlObs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.timeline-item').forEach(el=>tlObs.observe(el));
+
+function toggleMobileMenu(){
+  const links=document.querySelector('.nav-links');
+  const isOpen=links.style.display==='flex';
+  links.style.display=isOpen?'':'flex';
+  if(!isOpen){links.style.flexDirection='column';links.style.position='absolute';links.style.top='100%';links.style.left='0';links.style.right='0';links.style.background='rgba(255,255,255,0.98)';links.style.padding='20px 30px 30px';links.style.borderBottom='1px solid var(--border)';}
+}
+</script>
+</body>
+</html>
