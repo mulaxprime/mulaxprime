@@ -20,11 +20,11 @@
 
 **Amantle Mpaekae** — known as Mulax Prime. 19 years old. Self-taught AI developer from Gaborone, Botswana.
 
-I don't learn from tutorials. I learn by building tools that solve real problems for real people. At 19, I have built and shipped two Python projects — one of which was presented to the Ministry of Education of Botswana.
+I don't learn from tutorials. I learn by building tools that solve real problems for real people. At 19, I've shipped three full versions of an AI-powered BGCSE Computer Studies tutor, tested by real students and real developers.
 
-- Creator of **Mothusi** — an AI voice assistant for BGCSE Computer Studies students
+- Creator of **Mothusi** — an AI tutor for BGCSE Computer Studies students, now at **V3.1**
 - Creator of **Mpho** — a Telegram bot with AI chat, TTS, and YouTube streaming
-- Currently building **Mothusi V3** with a fullscreen GUI and advanced student features
+- Currently expanding into full-stack web development — HTML, CSS (Flexbox), and JavaScript — to bring Mothusi to the browser
 - Studying algorithms and machine learning
 
 ---
@@ -33,6 +33,8 @@ I don't learn from tutorials. I learn by building tools that solve real problems
   <h2>Languages & Tools</h2>
 
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+  ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
   ![Groq AI](https://img.shields.io/badge/Groq_AI-FF6B00?style=for-the-badge&logoColor=white)
   ![tkinter](https://img.shields.io/badge/tkinter-GUI-blue?style=for-the-badge)
   ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
@@ -44,7 +46,7 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 ---
 
 <div align="center">
-  <h2>Python Knowledge</h2>
+  <h2>Skills Progress</h2>
 </div>
 
 | Topic | Status |
@@ -55,11 +57,16 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 | Modular Architecture | Done |
 | Error Handling | Done |
 | File Handling & JSON | Done |
-| API Integration | Done |
+| API Integration (Groq) | Done |
 | GUI Development (tkinter) | Done |
 | Threading | Done |
 | Voice — Speech Recognition & TTS | Done |
 | PyInstaller Packaging | Done |
+| HTML Structure | Done |
+| CSS Box Model | Done |
+| CSS Flexbox | Done |
+| CSS Colors, Fonts, Backgrounds | In Progress |
+| JavaScript (Fetch API) | Planned |
 | Algorithms | In Progress |
 | Machine Learning | In Progress |
 
@@ -69,7 +76,7 @@ I don't learn from tutorials. I learn by building tools that solve real problems
   <h2>Featured Projects</h2>
 </div>
 
-**Mothusi V2** — AI-powered voice assistant built for BGCSE Computer Studies students in Botswana. Features include student profiles, voice-based practice tests, wrong answer review, photo and video learning, and a full tkinter GUI. Packaged as a standalone Windows .exe. Tested by real students and presented to the Botswana Ministry of Education.
+**Mothusi V3.1** — AI-powered tutor for BGCSE Computer Studies students in Botswana. Built with a full tkinter GUI, Groq-powered AI responses, voice input/output, student login and registration, quiz mode with scoring, and auto-saved sessions. Open source on GitHub under MIT license, and independently tested by other Botswana developers.
 
 **Mpho** — Telegram bot with AI chat powered by Groq, text-to-speech via gTTS, and YouTube music streaming.
 
