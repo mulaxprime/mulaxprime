@@ -12,10 +12,6 @@
   <img width="100%" src="https://github-widgetbox.vercel.app/api/profile?username=mulaxprime&data=followers,repositories,stars,commits&theme=nautical"/>
 </div>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=mulaxprime&label=Profile%20Views&color=00bfff&style=for-the-badge" alt="Profile views"/>
-</p>
-
 ---
 
 <div align="center">
@@ -92,8 +88,6 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 
   ![](https://github-readme-stats.vercel.app/api?username=mulaxprime&theme=radical&hide_border=false&include_all_commits=true&count_private=true)
 
-  ![](https://github-readme-streak-stats.herokuapp.com/?user=mulaxprime&theme=radical&hide_border=false)
-
   <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mulaxprime&theme=tokyonight" width="100%">
 
   <p align="center">
@@ -136,14 +130,8 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 ---
 
 <div align="center">
-  <h3>⭐ Thanks for stopping by</h3>
-  <p>If something here helped you or gave you an idea — a star on one of my repos means more than you'd think.</p>
-  <p><i>"Talk is cheap. Show me the code." — Linus Torvalds</i></p>
-</div>
-
-<div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Google+Sans&weight=600&size=20&pause=1000&color=00BFFF&center=true&vCenter=true&width=500&lines=Building+from+Botswana.+One+tool+at+a+time." alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Google+Sans&weight=500&size=18&duration=3000&pause=1200&color=00BFFF&center=true&vCenter=true&width=500&lines=Thanks+for+visiting+my+profile!;Star+a+repo+if+it+helped+you+%E2%AD%90;Building+from+Botswana.+One+tool+at+a+time." alt="Typing SVG" />
   </a>
 </div>
 
