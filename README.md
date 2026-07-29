@@ -31,18 +31,6 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 - Currently expanding into full-stack web development — HTML, CSS (Flexbox), and JavaScript — to bring Mothusi to the browser
 - Studying algorithms and machine learning
 
-```python
-class MulaxPrime:
-    def __init__(self):
-        self.based_in = "Gaborone, Botswana"
-        self.ships = True
-        self.tutorials_completed = "irrelevant"
-        self.projects_shipped = ["Mothusi V1-V3.1", "Mpho"]
-
-    def learn(self, concept):
-        return self.build(concept)  # no other path
-```
-
 ---
 
 <div align="center">
@@ -126,6 +114,13 @@ class MulaxPrime:
 <div align="center">
   <h2>Contribution Graph</h2>
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=mulaxprime&bg_color=0d1117&color=00bfff&line=6a0dad&point=00bfff&area=true&hide_border=true&radius=8" width="100%">
+</div>
+
+---
+
+<div align="center">
+  <h2>Contribution Snake</h2>
+  <img src="https://raw.githubusercontent.com/mulaxprime/mulaxprime/output/github-contribution-grid-snake.svg" width="100%">
 </div>
 
 ---
