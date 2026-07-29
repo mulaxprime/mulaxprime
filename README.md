@@ -99,6 +99,16 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 ---
 
 <div align="center">
+  <h2>Open Source Ranking</h2>
+  <a href="https://gitista.com/botswana/">
+    <img src="https://img.shields.io/badge/Gitista-Top%20Contributor%20in%20Botswana-0d1117?style=for-the-badge&logo=github&logoColor=00bfff&labelColor=000000" alt="Gitista Botswana Rank"/>
+  </a>
+  <p>Click through for my current live rank on Botswana's open source leaderboard.</p>
+</div>
+
+---
+
+<div align="center">
   <h2>GitHub Trophies</h2>
   <img src="https://github-profile-trophy.vercel.app/?username=mulaxprime&theme=algolia&no-frame=true&no-bg=true&margin-w=4&column=7" width="100%"/>
 </div>
