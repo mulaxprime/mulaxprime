@@ -12,6 +12,10 @@
   <img width="100%" src="https://github-widgetbox.vercel.app/api/profile?username=mulaxprime&data=followers,repositories,stars,commits&theme=nautical"/>
 </div>
 
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=mulaxprime&label=Profile%20Views&color=00bfff&style=for-the-badge" alt="Profile views"/>
+</p>
+
 ---
 
 <div align="center">
@@ -26,6 +30,18 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 - Creator of **Mpho** — a Telegram bot with AI chat, TTS, and YouTube streaming
 - Currently expanding into full-stack web development — HTML, CSS (Flexbox), and JavaScript — to bring Mothusi to the browser
 - Studying algorithms and machine learning
+
+```python
+class MulaxPrime:
+    def __init__(self):
+        self.based_in = "Gaborone, Botswana"
+        self.ships = True
+        self.tutorials_completed = "irrelevant"
+        self.projects_shipped = ["Mothusi V1-V3.1", "Mpho"]
+
+    def learn(self, concept):
+        return self.build(concept)  # no other path
+```
 
 ---
 
@@ -65,7 +81,8 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 | HTML Structure | Done |
 | CSS Box Model | Done |
 | CSS Flexbox | Done |
-| CSS Colors, Fonts, Backgrounds | In Progress |
+| CSS Colors, Fonts, Backgrounds | Done |
+| Deployment (Vercel) | Done |
 | JavaScript (Fetch API) | Planned |
 | Algorithms | In Progress |
 | Machine Learning | In Progress |
@@ -86,6 +103,8 @@ I don't learn from tutorials. I learn by building tools that solve real problems
   <h2>GitHub Stats</h2>
 
   ![](https://github-readme-stats.vercel.app/api?username=mulaxprime&theme=radical&hide_border=false&include_all_commits=true&count_private=true)
+
+  ![](https://github-readme-streak-stats.herokuapp.com/?user=mulaxprime&theme=radical&hide_border=false)
 
   <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mulaxprime&theme=tokyonight" width="100%">
 
@@ -120,6 +139,12 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 </div>
 
 ---
+
+<div align="center">
+  <h3>⭐ Thanks for stopping by</h3>
+  <p>If something here helped you or gave you an idea — a star on one of my repos means more than you'd think.</p>
+  <p><i>"Talk is cheap. Show me the code." — Linus Torvalds</i></p>
+</div>
 
 <div align="center">
   <a href="https://git.io/typing-svg">
