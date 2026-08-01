@@ -116,8 +116,8 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 ---
 
 <div align="center">
-  <h2>Contribution Graph</h2>
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=mulaxprime&bg_color=0d1117&color=00bfff&line=6a0dad&point=00bfff&area=true&hide_border=true&radius=8" width="100%">
+  <h2>Streak Stats</h2>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=mulaxprime&theme=radical&hide_border=false&background=0D1117&stroke=00BFFF&ring=00BFFF&fire=6A0DAD&currStreakLabel=00BFFF" alt="GitHub Streak Stats" width="100%">
 </div>
 
 ---
