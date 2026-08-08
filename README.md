@@ -105,7 +105,6 @@ I don't learn from tutorials. I learn by building tools that solve real problems
   </a>
   <p>Click through for my current live rank on Botswana's open source leaderboard.</p>
 </div>
-[![committers.top badge](https://user-badge.committers.top/botswana/USERNAME.svg)](https://user-badge.committers.top/botswana/mulaxprime)
 ---
 
 <div align="center">
