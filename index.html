@@ -228,20 +228,20 @@
     <span class="line3">Self-taught. Building real tools, not tutorials.</span>
   </h1>
   <p class="hero-sub">
-    I'm a 19-year-old self-taught developer building Mothusi — an AI voice and chat study assistant helping BGCSE Computer Studies students in Botswana learn and test themselves, for free.
+    I'm a 19-year-old self-taught developer building Mothusi — an AI voice and chat study assistant helping BGCSE Computer Studies students in Botswana learn and test themselves, for free — and Tsela, an offline AI admissions assistant built for the Africa Deep Tech Challenge 2026.
   </p>
   <div class="hero-actions">
-    <a href="#portfolio" class="btn btn-accent btn-lg">See Mothusi ↓</a>
+    <a href="#portfolio" class="btn btn-accent btn-lg">See My Work ↓</a>
     <a href="https://github.com/mulaxprime" target="_blank" class="btn btn-outline btn-lg">View GitHub</a>
   </div>
   <div class="hero-stats">
     <div class="stat-item">
-      <span class="stat-num stat-accent">3</span>
-      <span class="stat-label">Versions Shipped</span>
+      <span class="stat-num stat-accent">4</span>
+      <span class="stat-label">Projects Shipped</span>
     </div>
     <div class="stat-item">
-      <span class="stat-num stat-accent">2</span>
-      <span class="stat-label">Schools Demoed</span>
+      <span class="stat-num stat-accent">#1</span>
+      <span class="stat-label">Gitista Botswana Rank</span>
     </div>
     <div class="stat-item">
       <span class="stat-num stat-accent">2026</span>
@@ -273,13 +273,14 @@
     <h2 class="section-title">Why I Build<br>What I Build</h2>
     <div class="about-bio">
       <p>My name is Amantle Mpaekae, also known as Mulax Prime. I'm a self-taught developer from Mogoditshane, Botswana, working toward becoming an AI Engineer.</p>
-      <p>I scored a D in Computer Studies for BGCSE. That same subject is what I now build software for. <strong>Mothusi</strong> exists because I know what it feels like to be stuck on a topic with no one to explain it simply — so I built the explainer I needed.</p>
-      <p>I learn by shipping, not by studying theory first. Every version of Mothusi taught me something no course could — debugging real crashes, fixing real architecture problems, demoing to real teachers and getting real feedback.</p>
+      <p>I scored a D in Computer Studies for BGCSE. That same subject is what I now build software for. <strong>Mothusi</strong> exists because I know what it feels like to be stuck on a topic with no one to explain it simply — so I built the explainer I needed. <strong>Tsela</strong> exists because I went through the university admissions process myself with no reliable source for points requirements and deadlines — so I built that too, offline, for the next student going through the same thing.</p>
+      <p>I learn by shipping, not by studying theory first. Every version of Mothusi and every constraint on Tsela taught me something no course could — debugging real crashes, fixing real architecture problems, demoing to real teachers, and getting real feedback.</p>
     </div>
     <div class="skills-list">
       <span class="skill-tag">Python</span>
       <span class="skill-tag">tkinter</span>
       <span class="skill-tag">Groq AI</span>
+      <span class="skill-tag">llama.cpp</span>
       <span class="skill-tag">edge-tts</span>
       <span class="skill-tag">SpeechRecognition</span>
       <span class="skill-tag">PyInstaller</span>
@@ -343,7 +344,7 @@
       <div class="service-icon">🧠</div>
       <div class="service-num">02</div>
       <h3 class="service-name">AI Integration</h3>
-      <p class="service-desc">Connecting applications to Groq AI for fast, context-aware responses. Prompt design, syllabus-scoped systems, conversation handling.</p>
+      <p class="service-desc">Connecting applications to Groq AI for fast, context-aware responses, and running quantized local LLMs offline via llama.cpp for zero-connectivity environments.</p>
     </div>
     <div class="service-card reveal">
       <div class="service-icon">🎙️</div>
@@ -358,8 +359,8 @@
 <section id="portfolio">
   <div class="section-header reveal">
     <div>
-      <div class="section-tag">Featured Project</div>
-      <h2 class="section-title">Mothusi</h2>
+      <div class="section-tag">Featured Projects</div>
+      <h2 class="section-title">What I've<br>Built</h2>
     </div>
   </div>
   <div class="portfolio-grid" id="projectGrid">
@@ -371,7 +372,18 @@
       <div class="project-info">
         <div class="project-cats"><span class="project-cat">AI Voice Assistant</span><span class="project-cat">Python</span></div>
         <h3 class="project-name">Mothusi — BGCSE Study Assistant</h3>
-        <p class="project-brief">An AI voice and chat study assistant for BGCSE Computer Studies students in Botswana. Students type or speak a question and get an answer in under 2 seconds, read aloud in a natural voice. Includes a full quiz mode — 7 questions, 10 marks, two attempts per question, and automatic score saving. Built with Python, tkinter, Groq AI, edge-tts and SpeechRecognition. Demoed live at two secondary schools.</p>
+        <p class="project-brief">An AI voice and chat study assistant for BGCSE Computer Studies students in Botswana. Students type or speak a question and get an answer read aloud in a natural voice. Includes a full quiz mode — 7 questions, 10 marks, two attempts per question, and automatic score saving. Built with Python, tkinter, Groq AI, edge-tts and SpeechRecognition. Demoed live at Mogoditshane Senior Secondary School.</p>
+      </div>
+    </div>
+    <div class="project-card featured reveal">
+      <div class="project-thumb">
+        <div class="project-thumb-text">Tsela</div>
+        <div class="project-overlay"><a href="https://github.com/mulaxprime/Tsela" class="view-btn" target="_blank">View on GitHub →</a></div>
+      </div>
+      <div class="project-info">
+        <div class="project-cats"><span class="project-cat">Offline AI</span><span class="project-cat">ADTC 2026</span></div>
+        <h3 class="project-name">Tsela — Offline University Admissions Assistant</h3>
+        <p class="project-brief">An offline, on-device AI assistant answering university admissions questions for six Botswana institutions. Runs a quantized Qwen2.5-1.5B model via llama.cpp on an 8GB no-GPU laptop, with a deterministic lookup that bypasses the model entirely for points and requirement questions — preventing hallucination on the numbers that matter most. Built and submitted solo for the Africa Deep Tech Challenge 2026.</p>
       </div>
     </div>
   </div>
@@ -402,14 +414,14 @@
     </div>
     <div class="reveal">
       <div class="section-tag">Development</div>
-      <h2 class="section-title">Building<br>Mothusi</h2>
+      <h2 class="section-title">Building<br>Real Tools</h2>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-period">2026 — Present</div>
           <h3 class="timeline-role">Independent Developer</h3>
           <div class="timeline-company">Mulax Prime</div>
-          <p class="timeline-desc">Building Mothusi solo. Working toward AI Engineering through real projects rather than courses — learning by shipping and fixing bugs in production.</p>
+          <p class="timeline-desc">Building Mothusi and Tsela solo. Working toward AI Engineering through real projects rather than courses — learning by shipping and fixing bugs in production.</p>
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
@@ -417,6 +429,13 @@
           <h3 class="timeline-role">Mothusi V3.1 — Demo Ready</h3>
           <div class="timeline-company">Mulax Prime</div>
           <p class="timeline-desc">Fixed five production bugs, rewired the quiz save logic, updated the syllabus with 2024 examiner report weak topics, and demoed to a Computer Studies teacher.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">August 2026</div>
+          <h3 class="timeline-role">Tsela — Submitted to ADTC 2026</h3>
+          <div class="timeline-company">Mulax Prime</div>
+          <p class="timeline-desc">Built and submitted an offline AI admissions assistant solo, including official performance profiling, on a budget-tier laptop with no GPU.</p>
         </div>
       </div>
     </div>
@@ -471,7 +490,7 @@
   <div class="contact-wrap">
     <div class="reveal">
       <p style="color:var(--muted);line-height:1.8;margin-bottom:10px;">
-        Interested in Mothusi, want to collaborate, or just want to connect with another Botswana developer? Reach out.
+        Interested in Mothusi or Tsela, want to collaborate, or just want to connect with another Botswana developer? Reach out.
       </p>
       <div class="contact-info-list">
         <div class="contact-info-item">
@@ -498,9 +517,9 @@
       </div>
     </div>
     <div class="reveal contact-note">
-      <p><strong style="color:var(--text)">Currently focused on Mothusi.</strong></p>
-      <p>I'm not taking freelance bot or web development work right now — all my time goes into building Mothusi and learning the next stage of the roadmap above.</p>
-      <p>If you want to follow the project, check the GitHub repo or reach out by email.</p>
+      <p><strong style="color:var(--text)">Currently focused on Mothusi and Tsela.</strong></p>
+      <p>I'm not taking freelance bot or web development work right now — all my time goes into building these projects and learning the next stage of the roadmap above.</p>
+      <p>If you want to follow the projects, check the GitHub repos or reach out by email.</p>
     </div>
   </div>
 </section>
