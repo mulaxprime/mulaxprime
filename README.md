@@ -26,7 +26,6 @@ I don't learn from tutorials. I learn by building tools that solve real problems
 - Creator of **Tsela** — an offline, on-device AI admissions assistant for Botswana university applicants, built for ADTC 2026
 - Creator of **Mpho** — a Telegram bot with AI chat, TTS, and YouTube streaming
 - Currently expanding into full-stack web development — Flask, HTML, CSS (Flexbox), and JavaScript — to bring Mothusi to the browser
-- Ranked **#1 contributor in Botswana** on Gitista's open source leaderboard
 
 ---
 
